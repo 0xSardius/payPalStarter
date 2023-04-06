@@ -9,13 +9,11 @@ const ABI = require("./abi.json");
 app.use(cors());
 app.use(express.json());
 
-
 app.get("/getNameAndBalance", async (req, res) => {
+  const { userAddress } = req.query;
 
   return res.status(200).json({});
 });
-
-
 
 Moralis.start({
   apiKey: process.env.MORALIS_KEY,
